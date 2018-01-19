@@ -32,11 +32,11 @@ const SOKOBAN = {
 let levels = [
   [
     "############",
-    "#          #",
+    "#         .#",
     "#          #",
     "#          #",
     "#   ####   #",
-    "#    .     #",
+    "#          #",
     "#          #",
     "#    $     #",
     "#    @     #",
@@ -180,7 +180,6 @@ let prototypeGameState = {
 
   isGoal: function ({x, y}) {
     return (this.level[y].charAt(x) == SOKOBAN.GOAL);
-
   },
 
   isMan: function ({x, y}) {
@@ -235,7 +234,6 @@ let prototypeGameState = {
   moveBoxIn: function (cell) {
     if (this.isGoal(cell)) {
       this.putBoxOnGoal(cell);
-
     }
     else {
       this.putBox(cell);
@@ -264,7 +262,6 @@ let prototypeGameState = {
   moveManIn: function (cell) {
     if (this.isGoal(cell)) {
       this.putManOnGoal(cell);
-
     }
     else {
       this.putMan(cell);
@@ -427,7 +424,6 @@ let prototypeGameState = {
 
     return this;
   },
-
   gg: function (){
 
     var congratulations = true,x,y;
@@ -440,7 +436,7 @@ let prototypeGameState = {
       }
     }
     if(congratulations){
-      alert("遊戲結束嘞");
+      alert("遊戲結束嘞喔");
     }
   }
 
@@ -569,7 +565,7 @@ let sokoban = {
    *
    * @returns {undefined}
    */
-  update: function (e,x,y) {
+  update: function (e) {
     this.move(e);
     this.paint();
     this.gg();
